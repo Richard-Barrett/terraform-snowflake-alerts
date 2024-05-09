@@ -11,7 +11,7 @@ terraform {
 provider "snowflake" {}
 
 module "snowflake_alert_bi_data_freshness_alert" {
-  source  = "../.." # Path to the root of the module
+  source = "../.." # Path to the root of the module
 
   database  = "BI"
   schema    = "BI"
