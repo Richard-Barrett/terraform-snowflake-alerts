@@ -13,6 +13,25 @@ Example CICD with `BitBucket` and `Codefresh`:
 
 ![Image](./images/diagram.png)
 
+## Notes
+
+In this code, the entire `alert_schedule` block is optional, using the `dynamic` block this module creates a variable that indicates whether the `alert_schedule` block  which should be included or not via the `include_alert_schedule` variable.
+
+```terraform
+variable "include_alert_schedule" {
+  description = "Whether to include the alert_schedule block"
+  type        = bool
+  default     = false
+}
+```
+
+In this code, `var.include_alert_schedule ? [1] : []` is a conditional expression. If `var.include_alert_schedule` is true, the dynamic `alert_schedule` block will be created. The default is false, and the dynamic `alert_schedule` block will not be created!
+
+Please note that if `var.include_alert_schedule` is true:
+
+- You should ensure at least one of `var.alert_interval` and `var.cron_expression` is not null in your variable definitions or in the code where you are calling this module.
+- If you use `var.cron_expression`, you should specify this as a cron string, default is set to `UTC` and you can overwrite it by specifying the `time_zone` variable.
+
 ## Usage
 
 To use the module you will need to use something adhering to the following format:
