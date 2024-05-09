@@ -18,11 +18,12 @@ Example CICD with `BitBucket` and `Codefresh`:
 To use the module you will need to use something adhering to the following format:
 
 ```hcl
-module "snowflake_warehouse_bi" {
+module "snowflake_alert_bi_data_freshness_alert" {
   source  = "https://github.com/Richard-Barrett/terraform-snowflake-alerts"
   version = "0.0.1"
 
   database  = "BI"
+  name      = "BI_DATA_FRESHNESS_ALERT"
   schema    = "BI"
   warehouse = "BI"
 
@@ -34,11 +35,12 @@ module "snowflake_warehouse_bi" {
 What if you want to specify the `condition_sql` and `action_sql` as a file?
 
 ```hcl
-module "snowflake_warehouse_bi" {
+module "snowflake_alert_bi_data_freshness_alert" {
   source  = "https://github.com/Richard-Barrett/terraform-snowflake-alerts"
   version = "0.0.1"
 
   database  = "BI"
+  name      = "BI_DATA_FRESHNESS_ALERT"
   schema    = "BI"
   warehouse = "BI"
 
@@ -56,12 +58,13 @@ Please replace `"condition.sql"` and `"action.sql"` with the names of your SQL f
 In general you may want to use the module in the following way:
 
 ```hcl
-module "snowflake_warehouse_bi" {
+module "snowflake_alert_bi_data_freshness_alert" {
   source  = "https://github.com/Richard-Barrett/terraform-snowflake-alerts"
   version = "0.0.1"
 
   database  = "BI"
   schema    = "BI"
+  name      = "BI_DATA_FRESHNESS_ALERT"
   warehouse = "BI"
 
   condition_sql = file("${path.module}/conditions/condition.sql")
@@ -90,7 +93,7 @@ In overview, this repository acts as a digestible module that allows you to crea
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.6 |
 | <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | ~> 0.89.0 |
 
 ## Providers
