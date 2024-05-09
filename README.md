@@ -1,9 +1,7 @@
-# terraform-snowflake-alerts
-Terraform Snowflake Module to Manage Snowflake Alerts
-
 <img align="right" width="60" height="60" src="images/terraform.png">
 
-# terraform-snowflake-warehouses module
+# terraform-snowflake-alerts
+Terraform Snowflake Module to Manage Snowflake Alerts
 
 This is a repository that makes a snowflake alert:
 
