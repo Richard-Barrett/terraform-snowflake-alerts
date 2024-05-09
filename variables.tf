@@ -21,7 +21,7 @@ variable "enabled" {
 }
 
 variable "alert_interval" {
-  type = number
+  type        = number
   description = "value in minutes for the alert interval."
   default     = 10
 }

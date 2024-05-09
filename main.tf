@@ -19,12 +19,12 @@ resource "snowflake_alert" "alert" {
     content {
       interval = var.alert_interval
       cron {
-        expression  = var.cron_expression
-        time_zone   = var.time_zone
+        expression = var.cron_expression
+        time_zone  = var.time_zone
       }
     }
   }
-  
+
   condition = var.condition_sql
   action    = var.action_sql
   enabled   = var.enabled
