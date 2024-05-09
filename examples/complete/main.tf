@@ -11,8 +11,7 @@ terraform {
 provider "snowflake" {}
 
 module "snowflake_alert_bi_data_freshness_alert" {
-  source  = "https://github.com/Richard-Barrett/terraform-snowflake-alerts"
-  version = "0.0.1"
+  source  = "../.." # Path to the root of the module
 
   database  = "BI"
   schema    = "BI"
