@@ -49,7 +49,7 @@ variable "schema" {
 variable "include_alert_schedule" {
   description = "Whether to include the alert_schedule block"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "cron_expression" {
